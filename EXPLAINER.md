@@ -55,7 +55,7 @@ Copies the trained model file (best.pt, 6.2 MB) to /content/ so you can download
 
 ---
 
-## Key Terms for Viva
+## Key Terms 
 
 | Term | Simple meaning |
 |------|----------------|
