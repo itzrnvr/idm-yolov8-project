@@ -82,3 +82,11 @@ Copies the trained model file (best.pt, 6.2 MB) to /content/ so you can download
 ## If Asked "Why Is mAP Only 0.72?"
 
 > "128 training images across 80 classes is extremely small — about 1.6 images per class. A model trained on the full COCO dataset (118,000 images) achieves ~0.50 mAP50 on the same benchmark. Our 0.72 is actually higher because we froze the backbone and used a low learning rate, preserving pretrained features while adapting the head. More data would push this to 0.85+."
+
+## If Asked "What Dataset Are You Fine-Tuning On? It's Not Domain-Specific"
+
+> "COCO128 is a 128-image subset of the COCO dataset — the same 80 classes the pretrained model already knows. I chose it because the project objective is to demonstrate the fine-tuning pipeline end-to-end: load pretrained, train, evaluate, deploy. COCO128 auto-downloads, has verified labels, and runs in under 2 minutes on a T4. For a real-world application I would swap in a domain-specific dataset — for example, a Roboflow traffic-sign dataset or a medical imaging dataset — by changing one line: `data='my_dataset.yaml'`. The pipeline stays identical. The point is: I built the full training system correctly. The dataset is the swappable part."
+
+## If Asked "What's the Difference Between COCO and COCO128?"
+
+> "COCO is the full Common Objects in Context dataset — 118,000 training images across 80 classes. COCO128 is a tiny 128-image subset used for testing and debugging. Same classes, same label format, just 900x fewer images. It's built into Ultralytics and auto-downloads, so it's the standard way to verify a YOLOv8 training pipeline works before committing to a longer run on real data."
