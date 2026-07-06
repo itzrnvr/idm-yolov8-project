@@ -1,4 +1,4 @@
-# IDM Project — Explainer
+# IDM Project Summary
 
 > Open this page during your viva. Read it top to bottom. Everything you need is here.
 
